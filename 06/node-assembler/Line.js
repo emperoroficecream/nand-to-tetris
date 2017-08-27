@@ -11,6 +11,7 @@ const clean = (input) => {
 
 function Line(input) {
   this.content = clean(input);
+  this.number = null;
   if (this.isCommand()) {
     this.type = this.commandType();
     this.parseCCommand(this.content);
@@ -48,6 +49,10 @@ Line.prototype.jump = function() {
 
 Line.prototype.isCommand = function() {
   return !!this.content;
+}
+
+Line.prototype.isPseudoCommand = function() {
+  return this.type === CommandTypes.L_COMMAND;
 }
 
 Line.prototype.commandType = function() {

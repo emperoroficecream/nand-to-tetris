@@ -1,2 +1,2 @@
-const parser = new require('./Parser')(__dirname + '/../add/Add.asm');
+const parser = new require('./Parser')(__dirname + '/../rect/Rect.asm');
 
